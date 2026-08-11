@@ -1,64 +1,98 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "ColdEmailOutput",
-  "description": "Structured output from the Cold Email Writer prompt",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cold Email Writer Output",
   "type": "object",
-  "required": ["context", "variant_a", "variant_b", "variant_c", "subject_analysis", "recommended_sequence"],
   "properties": {
     "context": {
       "type": "object",
-      "required": ["account", "contact_name", "contact_title", "trigger_signal"],
       "properties": {
-        "account": { "type": "string" },
-        "contact_name": { "type": "string" },
-        "contact_title": { "type": "string" },
-        "trigger_signal": { "type": "string", "description": "The specific trigger event or pain signal used" }
+        "account": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "trigger": {
+          "type": "string"
+        },
+        "product": {
+          "type": "string"
+        }
+      },
+      "required": ["account", "contact", "title", "trigger", "product"]
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "variant": {
+            "type": "string",
+            "enum": ["A", "B", "C"]
+          },
+          "subject": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "word_count": {
+            "type": "integer"
+          },
+          "personalization_signal": {
+            "type": "string"
+          },
+          "why_this_variant": {
+            "type": "string"
+          }
+        },
+        "required": ["variant", "subject", "body", "word_count", "personalization_signal", "why_this_variant"]
       }
     },
-    "variant_a": { "$ref": "#/definitions/EmailVariant" },
-    "variant_b": { "$ref": "#/definitions/EmailVariant" },
-    "variant_c": { "$ref": "#/definitions/EmailVariant" },
-    "subject_analysis": {
-      "type": "object",
-      "required": ["variant_a", "variant_b", "variant_c"],
-      "properties": {
-        "variant_a": { "type": "string", "description": "Why this subject works and its risk" },
-        "variant_b": { "type": "string" },
-        "variant_c": { "type": "string" }
+    "subject_line_analysis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "variant": {
+            "type": "string"
+          },
+          "why_it_works": {
+            "type": "string"
+          },
+          "risk": {
+            "type": "string"
+          }
+        },
+        "required": ["variant", "why_it_works", "risk"]
       }
     },
-    "recommended_sequence": {
-      "type": "string",
-      "description": "Recommended timing and order for sending the variants"
+    "recommended_send_sequence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "integer"
+          },
+          "variant": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": ["day", "variant", "note"]
+      }
     }
   },
-  "definitions": {
-    "EmailVariant": {
-      "type": "object",
-      "required": ["subject", "body", "word_count", "personalization_signal", "angle"],
-      "properties": {
-        "subject": {
-          "type": "string",
-          "description": "Subject line — lowercase, specific, ≤8 words"
-        },
-        "body": {
-          "type": "string",
-          "description": "Email body — 75-150 words, specific, no filler phrases"
-        },
-        "word_count": {
-          "type": "integer",
-          "minimum": 50,
-          "maximum": 175
-        },
-        "personalization_signal": {
-          "type": "string",
-          "description": "What makes this specific to this prospect (not a template)"
-        },
-        "angle": {
-          "type": "string",
-          "description": "The hook/frame this variant leads with"
-        }
-      }
-    }
-  }
+  "required": [
+    "context",
+    "variants",
+    "subject_line_analysis",
+    "recommended_send_sequence"
+  ]
 }
