@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ColdEmailOutput",
+  "description": "Structured output from the Cold Email Writer prompt",
+  "type": "object",
+  "required": ["context", "variant_a", "variant_b", "variant_c", "subject_analysis", "recommended_sequence"],
+  "properties": {
+    "context": {
+      "type": "object",
+      "required": ["account", "contact_name", "contact_title", "trigger_signal"],
+      "properties": {
+        "account": { "type": "string" },
+        "contact_name": { "type": "string" },
+        "contact_title": { "type": "string" },
+        "trigger_signal": { "type": "string", "description": "The specific trigger event or pain signal used" }
+      }
+    },
+    "variant_a": { "$ref": "#/definitions/EmailVariant" },
+    "variant_b": { "$ref": "#/definitions/EmailVariant" },
+    "variant_c": { "$ref": "#/definitions/EmailVariant" },
+    "subject_analysis": {
+      "type": "object",
+      "required": ["variant_a", "variant_b", "variant_c"],
+      "properties": {
+        "variant_a": { "type": "string", "description": "Why this subject works and its risk" },
+        "variant_b": { "type": "string" },
+        "variant_c": { "type": "string" }
+      }
+    },
+    "recommended_sequence": {
+      "type": "string",
+      "description": "Recommended timing and order for sending the variants"
+    }
+  },
+  "definitions": {
+    "EmailVariant": {
+      "type": "object",
+      "required": ["subject", "body", "word_count", "personalization_signal", "angle"],
+      "properties": {
+        "subject": {
+          "type": "string",
+          "description": "Subject line — lowercase, specific, ≤8 words"
+        },
+        "body": {
+          "type": "string",
+          "description": "Email body — 75-150 words, specific, no filler phrases"
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 175
+        },
+        "personalization_signal": {
+          "type": "string",
+          "description": "What makes this specific to this prospect (not a template)"
+        },
+        "angle": {
+          "type": "string",
+          "description": "The hook/frame this variant leads with"
+        }
+      }
+    }
+  }
+}

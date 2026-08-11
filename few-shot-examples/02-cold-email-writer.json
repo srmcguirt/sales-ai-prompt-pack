@@ -1,0 +1,86 @@
+{
+  "prompt": "02-cold-email-writer",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "input": {
+        "account": "DataStream Analytics",
+        "contact_name": "Marcus Webb",
+        "contact_title": "VP of Revenue Operations",
+        "company_size": "~200 employees, Series B ($28M raised, announced 6 weeks ago)",
+        "trigger_event": "Series B announcement + 4 Sales Operations job postings in last 45 days",
+        "product": "Multi-agent orchestration platform that automates CRM data enrichment and sales workflow",
+        "pain_signal": "Job postings mention 'manual data entry' and 'CRM hygiene' as key responsibilities"
+      },
+      "output": {
+        "variant_a": {
+          "subject": "datastream's series b + 4 revops hires",
+          "body": "Marcus,\n\nCongratulations on the Series B — saw the announcement and noticed you're building out RevOps fast (4 open roles in 45 days).\n\nThe roles mention CRM hygiene and manual data entry as core responsibilities. Most RevOps teams at your stage are hiring for that because they haven't yet automated it — we help teams eliminate the manual piece so those hires can focus on strategy instead of data entry.\n\nWould a 20-minute call be worth it, or is this better timed after you've filled the team?\n\nAlex",
+          "word_count": 89,
+          "personalization_signal": "Specific reference to Series B timing + 4 RevOps job postings + job description language",
+          "angle": "Trigger event (Series B + hiring) → pain signal (job description language) → relevance"
+        },
+        "variant_b": {
+          "subject": "crm hygiene eating your revops team's time?",
+          "body": "Marcus,\n\nQuick question — with DataStream scaling post-Series B, how much of your RevOps team's time goes to manual CRM work versus actual strategy and analysis?\n\nAsking because the roles you're posting mention CRM hygiene as a core responsibility. That's usually a signal the manual work hasn't been automated yet. We help RevOps teams like yours get that time back — typically 12-15 hours per week per analyst.\n\nWorth 15 minutes to see if we could accelerate what you're building?\n\nAlex",
+          "word_count": 97,
+          "personalization_signal": "Question framed around their post-Series B scaling context",
+          "angle": "Problem-first → benchmark (12-15 hrs) → soft ask"
+        },
+        "variant_c": {
+          "subject": "what companies like datastream do at series b",
+          "body": "Marcus,\n\nPost-Series B RevOps scaling follows a pretty predictable pattern: headcount grows faster than process, CRM data quality degrades, and the team spends more time fixing data than using it.\n\nThe teams that avoid this hire RevOps people to run strategy, not data hygiene — and automate the manual work first. Your 4 open roles suggest you're in the early stages of building this.\n\nWe've helped 3 B2B SaaS companies in your exact situation (Series B, scaling RevOps) eliminate the manual CRM work entirely. Would that be useful context for what you're building?\n\nAlex",
+          "word_count": 104,
+          "personalization_signal": "Pattern recognition from similar companies at same stage",
+          "angle": "Social proof / pattern → relevance → case study reference"
+        },
+        "subject_analysis": {
+          "variant_a": "Lowercase, specific, references two concrete data points. Risk: may look like a data aggregator",
+          "variant_b": "Question format, specific pain language from their job posting. Strong if they recognize the connection",
+          "variant_c": "Pattern/category framing. Works well if they see themselves as part of a recognizable scaling pattern"
+        },
+        "recommended_sequence": "Send Variant A on Tuesday morning. If no reply by Thursday, send Variant B with a new subject (not 'Re:'). Day 7 without reply: Variant C with 'Last email' framing"
+      }
+    },
+    {
+      "input": {
+        "account": "Meridian Health Systems",
+        "contact_name": "Dr. Sarah Okonkwo",
+        "contact_title": "Chief Medical Information Officer",
+        "company_size": "~1,200 employees, regional health system",
+        "trigger_event": "CMIO role is newly created (LinkedIn shows 8 months in role)",
+        "product": "AI documentation platform that automates clinical note generation",
+        "pain_signal": "Recent press release mentions 'reducing physician burnout' as a 2026 strategic priority"
+      },
+      "output": {
+        "variant_a": {
+          "subject": "physician documentation burden — meridian's 2026 priority",
+          "body": "Dr. Okonkwo,\n\nYour 2026 strategic focus on reducing physician burnout caught my attention — documentation burden is the #1 driver of burnout in most health systems we talk to.\n\nWe work with CMIOs who are building the case for AI-assisted documentation to give physicians time back. Most see 30-45 minutes per physician per day recovered within 90 days of deployment.\n\nIs this on your roadmap for 2026, or is it more of a 2027 initiative at this point?\n\nAlex",
+          "word_count": 85,
+          "personalization_signal": "Specific reference to their published 2026 strategic priority",
+          "angle": "Their stated priority → quantified outcome → timeline question"
+        },
+        "variant_b": {
+          "subject": "cmio documentation initiatives — worth a call?",
+          "body": "Dr. Okonkwo,\n\nCongratulations on the CMIO role at Meridian — it's clear from the organization's 2026 priorities that you're focused on physician experience.\n\nI'm reaching out because we help CMIOs build the business case and implementation plan for AI-assisted documentation — specifically for health systems your size where EHR documentation is creating the most friction.\n\nAre you in active evaluation mode for this, or still in the research phase?\n\nAlex",
+          "word_count": 79,
+          "personalization_signal": "Recognition of new role + connection to stated priority",
+          "angle": "New role acknowledgment → relevant positioning → stage-discovery question"
+        },
+        "variant_c": {
+          "subject": "30-45 min/physician/day back — for meridian?",
+          "body": "Dr. Okonkwo,\n\nMost CMIOs I work with are trying to solve the same problem: documentation takes 40-50% of physician time, and EHRs haven't fixed it.\n\nWe've worked with 4 regional health systems to deploy AI-assisted documentation and recovered an average of 35 minutes per physician per day — without changing clinical workflows or requiring new hardware.\n\nGiven Meridian's 2026 focus on physician experience, would it be worth 20 minutes to see the data?\n\nAlex",
+          "word_count": 88,
+          "personalization_signal": "Industry benchmark + their stated 2026 priority",
+          "angle": "Peer comparison + quantified outcome + their priority"
+        },
+        "subject_analysis": {
+          "variant_a": "References their exact strategy doc language. High relevance signal. Risk: slightly long",
+          "variant_b": "Safe and professional. Works for a formal healthcare buying context. Lower urgency",
+          "variant_c": "Outcome-led with specific numbers. Strongest for a CMIO building a business case"
+        },
+        "recommended_sequence": "Healthcare buyers move slowly. Send Variant C first (outcome-focused). Day 5: Variant A (strategic alignment). Day 12: Variant B (softer, relationship-building tone). Day 21: Break-up email"
+      }
+    }
+  ]
+}
