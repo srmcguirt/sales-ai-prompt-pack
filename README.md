@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE) [![Prompts](https://img.shields.io/badge/Prompts-8-orange?style=flat-square)](./system-prompts/) [![GitHub stars](https://img.shields.io/github/stars/srmcguirt/sales-ai-prompt-pack?style=flat-square)](https://github.com/srmcguirt/sales-ai-prompt-pack)
 
-> **8 production-grade system prompts that turn any LLM into a senior sales strategist.** Prospect research, cold emails, discovery prep, demo scripts, objection handling, proposals, win/loss analysis, and follow-up sequences — each with few-shot examples and structured output schemas for Claude, GPT-4, Cursor, and any OpenAI-compatible API.
+> **8 system prompts that turn any LLM into a senior sales professional.** Prospect research, cold emails, discovery prep, demo scripts, objection handling, proposals, win/loss analysis, and follow-up sequences — each with few-shot examples and structured output schemas for Claude, GPT-4, Cursor, and any OpenAI-compatible API.
 >
 > *Part of the [Shane McGuirt](https://srmcguirt.github.io) AI tooling collection.*
 
@@ -40,32 +40,28 @@ Every prompt follows our **4-Layer Prompt Architecture**:
 
 ```
 ┌─────────────────────────────────────────────┐
-│ Layer 1: IDENTITY │
-│ Senior sales professional + specific │
-│ experience scope and domain expertise │
+│  Layer 1: IDENTITY                          │
+│  Senior sales professional + specific       │
+│  experience scope and domain expertise      │
 ├─────────────────────────────────────────────┤
-│ Layer 2: GUARDRAILS │
-│ 10-15 behavioral constraints that prevent │
-│ common AI failure modes in sales output │
-│ "Never send a 'just checking in' email" │
+│  Layer 2: GUARDRAILS                        │
+│  10-15 behavioral constraints that prevent  │
+│  common AI failure modes in sales output    │
+│  "Never send a 'just checking in' email"    │
 ├─────────────────────────────────────────────┤
-│ Layer 3: OUTPUT BLUEPRINT │
-│ Exact section-by-section format with │
-│ tables, scripts, and structure the AI │
-│ must follow — no freeform output │
+│  Layer 3: OUTPUT BLUEPRINT                  │
+│  Exact section-by-section format with       │
+│  tables, scripts, and structure the AI      │
+│  must follow — no freeform output           │
 ├─────────────────────────────────────────────┤
-│ Layer 4: EDGE CASE LIBRARY │
-│ 7-8 specific scenarios (enterprise, │
-│ SMB, inbound, competitive, no-budget) │
-│ that trip up generic prompts │
+│  Layer 4: EDGE CASE LIBRARY                 │
+│  7-8 specific scenarios (enterprise,        │
+│  SMB, inbound, competitive, no-budget)      │
+│  that trip up generic prompts               │
 └─────────────────────────────────────────────┘
 ```
 
-### The Pipeline Test™
-
-Every prompt in this pack passes the **Pipeline Test™**: *Can you send this output to a VP of Sales and not get laughed out of the meeting?*
-
-Research briefs go straight to the AE. Follow-up emails send as-is. Proposals circulate to economic buyers without revision. If the output needs rewriting before it enters your pipeline, the prompt isn't done. That's the WireForge standard.
+**The Stakeholder Test™:** Every output from these prompts goes directly into your sales workflow without rewriting. Research briefs go straight to the AE. Follow-up emails send as-is. Proposals circulate to economic buyers without revision.
 
 ---
 
@@ -74,21 +70,21 @@ Research briefs go straight to the AE. Follow-up emails send as-is. Proposals ci
 ```
 sales-ai-prompt-pack/
 ├── system-prompts/
-│ ├── 01-prospect-research-analyst.md
-│ ├── 02-cold-email-writer.md
-│ ├── 03-discovery-call-prep.md
-│ ├── 04-demo-script-builder.md
-│ ├── 05-objection-handler.md
-│ ├── 06-proposal-writer.md
-│ ├── 07-win-loss-analyzer.md
-│ └── 08-followup-sequence-writer.md
+│   ├── 01-prospect-research-analyst.md
+│   ├── 02-cold-email-writer.md
+│   ├── 03-discovery-call-prep.md
+│   ├── 04-demo-script-builder.md
+│   ├── 05-objection-handler.md
+│   ├── 06-proposal-writer.md
+│   ├── 07-win-loss-analyzer.md
+│   └── 08-followup-sequence-writer.md
 ├── few-shot-examples/
-│ ├── 01-prospect-research-analyst.json
-│ ├── 02-cold-email-writer.json
-│ └── ... (8 total)
+│   ├── 01-prospect-research-analyst.json
+│   ├── 02-cold-email-writer.json
+│   └── ... (8 total)
 ├── output-schemas/
-│ ├── 01-prospect-research-analyst.json
-│ └── ... (8 total)
+│   ├── 01-prospect-research-analyst.json
+│   └── ... (8 total)
 ├── README.md
 ├── LICENSE
 └── CHANGELOG.md
@@ -117,22 +113,22 @@ import anthropic
 client = anthropic.Anthropic()
 
 with open("system-prompts/02-cold-email-writer.md") as f:
- system_prompt = f.read()
+    system_prompt = f.read()
 
 message = client.messages.create(
- model="claude-sonnet-4-20250514",
- max_tokens=2048,
- system=system_prompt,
- messages=[{
- "role": "user",
- "content": """
- Account: Acme Corp (B2B SaaS, 300 employees, Series B)
- Contact: Sarah Chen, VP Engineering
- Trigger: Just raised $40M Series B (announced 2 weeks ago)
- Product: Our multi-agent orchestration platform
- Pain signal: 3 open ML Ops engineer roles posted in last 60 days
- """
- }]
+    model="claude-sonnet-4-20250514",
+    max_tokens=2048,
+    system=system_prompt,
+    messages=[{
+        "role": "user",
+        "content": """
+        Account: Acme Corp (B2B SaaS, 300 employees, Series B)
+        Contact: Sarah Chen, VP Engineering
+        Trigger: Just raised $40M Series B (announced 2 weeks ago)
+        Product: Our multi-agent orchestration platform
+        Pain signal: 3 open ML Ops engineer roles posted in last 60 days
+        """
+    }]
 )
 ```
 
@@ -152,19 +148,19 @@ The full sales cycle covered end-to-end:
 
 ```
 Account identified → Prospect Research Analyst
- ↓
+         ↓
 Intel brief → Cold Email Writer
- ↓
+         ↓
 Reply received → Discovery Call Prep
- ↓
+         ↓
 Call completed → Follow-Up Sequence Writer
- ↓
+         ↓
 Demo scheduled → Demo Script Builder
- ↓
+         ↓
 Objection raised → Objection Handler
- ↓
+         ↓
 Demo completed → Proposal Writer
- ↓
+         ↓
 Deal closed (won or lost) → Win/Loss Analyzer
 ```
 
@@ -201,22 +197,6 @@ This email will be ignored.
 **You provide:** Meeting notes (3 bullet points about what was discussed, commitments made, next step agreed)
 
 **You get:** A 6-email sequence with specific subject lines, opening hooks that reference exact things said in the meeting, a structured recap, resources tailored to their stated concerns, a stakeholder multi-thread email, and a break-up email that creates closure without desperation.
-
----
-
-## 🧰 Compatible With
-
-| Platform | System Prompt | Few-Shot Examples | Structured Output |
-|----------|:---:|:---:|:---:|
-| Claude (Anthropic) | ✅ | ✅ | ✅ (tool_use) |
-| GPT-4o / GPT-4 (OpenAI) | ✅ | ✅ | ✅ (json_schema) |
-| Claude Code | ✅ | ✅ | ✅ |
-| Cursor | ✅ | ✅ | — |
-| VS Code Copilot | ✅ | ✅ | — |
-| Aider | ✅ | ✅ | — |
-| Ollama / Local LLMs | ✅ | ✅ | ⚠️ (model-dependent) |
-| LangChain / LlamaIndex | ✅ | ✅ | ✅ |
-| Any OpenAI-compatible API | ✅ | ✅ | ✅ |
 
 ---
 
