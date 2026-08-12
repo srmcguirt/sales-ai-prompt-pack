@@ -1,0 +1,525 @@
+{
+  "prompt_name": "Proposal Writer",
+  "examples": [
+    {
+      "input": {
+        "prospect_company": "Zoom",
+        "prospect_contact": "Rachel Torres",
+        "prospect_title": "VP of Sales",
+        "product": "Sales engagement platform",
+        "acv": "$85,000",
+        "segment": "Mid-market",
+        "discovery_notes": "Zoom's sales team of 140 reps is using a patchwork of Outreach for sequences, Gong for call recording, and internal spreadsheets for pipeline tracking. Reps are spending 3+ hours daily on admin tasks. Sequence reply rates have dropped from 12% to 6% over the past year. They need a unified platform before their SKO in March."
+      },
+      "output": {
+        "prepared_for": {
+          "company": "Zoom Video Communications",
+          "contact": "Rachel Torres",
+          "title": "VP of Sales"
+        },
+        "prepared_by": "Jordan Wells, Senior Account Executive",
+        "date": "August 11, 2026",
+        "valid_through": "September 10, 2026",
+        "executive_summary": {
+          "problem": "Zoom's 140-person sales team is losing over 15,000 rep-hours per quarter to manual admin work across three disconnected tools, while outbound reply rates have fallen 50% year-over-year, threatening pipeline generation for H1 2027.",
+          "solution": "A unified sales engagement platform that consolidates sequencing, conversation intelligence, and pipeline management into a single workflow, eliminating tool-switching and enabling AI-driven personalization at scale.",
+          "result": "Based on customer benchmarks, Zoom can expect to recover 1.5-2 hours per rep per day, improve outbound reply rates by 40-60%, and gain real-time pipeline visibility that currently requires manual spreadsheet reconciliation.",
+          "investment": "$85,000 annually, with a projected payback period of 3.2 months based on recovered selling time alone.",
+          "timeline_to_value": "Core platform live within 6 weeks, full team rollout by week 10, aligned with your March SKO timeline."
+        },
+        "their_situation": "Zoom's sales organization has grown rapidly over the past three years, and the tooling that worked for a 50-person team is straining under the weight of 140 reps across four segments. Today, reps start their morning in Outreach building sequences, switch to Gong to review call recordings, then toggle to spreadsheets to update pipeline numbers that their managers need for the weekly forecast.\n\nThis tool fragmentation isn't just an inconvenience—it's a measurable drag on performance. In our discovery conversations, Rachel's team estimated that reps spend an average of 3.2 hours per day on administrative tasks that don't directly involve selling. For a team of 140, that's 448 hours of lost selling time every single day.\n\nThe outbound motion has taken the hardest hit. Sequence reply rates have dropped from 12% to 6% over the past twelve months. Rachel's team attributes this to two factors: generic sequences that aren't personalized enough to cut through noise, and inconsistent follow-up because reps lose track of where prospects are across different tools.\n\nMeanwhile, Zoom's sales leadership lacks real-time visibility into pipeline health. The current process involves managers manually collecting spreadsheet updates from their teams every Friday, consolidating them over the weekend, and presenting a pipeline snapshot on Monday that's already 72 hours stale. This makes mid-quarter course corrections nearly impossible.\n\nZoom has an SKO planned for March 2027 and wants to launch any new tooling ahead of that event to use SKO as the enablement moment rather than trying to train during a regular quarter.",
+        "proposed_solution": {
+          "included": [
+            {
+              "feature": "Unified sequence builder with AI personalization",
+              "addresses": "Declining reply rates and generic outbound messaging"
+            },
+            {
+              "feature": "Integrated conversation intelligence with auto-logging",
+              "addresses": "3.2 hours/day of manual admin work and context lost between tools"
+            },
+            {
+              "feature": "Real-time pipeline dashboard with automated CRM sync",
+              "addresses": "Stale weekly pipeline snapshots and manual spreadsheet reconciliation"
+            },
+            {
+              "feature": "Multi-channel engagement tracking (email, phone, LinkedIn, video)",
+              "addresses": "Fragmented view of prospect engagement across channels"
+            },
+            {
+              "feature": "Manager coaching console with AI-generated call summaries",
+              "addresses": "Inability to scale coaching across 140 reps"
+            },
+            {
+              "feature": "Dedicated implementation team and SKO enablement package",
+              "addresses": "Timeline pressure to launch before March SKO"
+            }
+          ],
+          "not_included": [
+            {
+              "item": "Custom API integrations beyond standard CRM connectors",
+              "reason": "Zoom's Salesforce instance uses standard configuration; custom integrations can be scoped in Phase 2 if needed"
+            },
+            {
+              "item": "Marketing automation or demand generation features",
+              "reason": "Out of scope for the sales engagement use case; Zoom's marketing team has a separate tech stack evaluation underway"
+            }
+          ]
+        },
+        "business_case": {
+          "current_state_costs": [
+            {
+              "cost_element": "Outreach licenses (140 seats)",
+              "current": "$252,000/year",
+              "with_product": "$0 (replaced)",
+              "annual_savings": "$252,000"
+            },
+            {
+              "cost_element": "Gong licenses (140 seats)",
+              "current": "$168,000/year",
+              "with_product": "$0 (replaced)",
+              "annual_savings": "$168,000"
+            },
+            {
+              "cost_element": "Lost selling time (3.2 hrs/rep/day at $75/hr blended)",
+              "current": "$8,400,000/year",
+              "with_product": "$4,200,000/year (50% recovery)",
+              "annual_savings": "$4,200,000"
+            },
+            {
+              "cost_element": "Pipeline leakage from stale data and missed follow-ups",
+              "current": "$1,800,000/year estimated",
+              "with_product": "$720,000/year (60% improvement)",
+              "annual_savings": "$1,080,000"
+            }
+          ],
+          "total_annual_savings": "$5,700,000 (conservative estimate including tool consolidation and productivity gains)",
+          "payback_period": "3.2 months based on tool cost elimination alone; under 1 month when productivity gains are included",
+          "three_year_roi": "19,900% ($17.1M in total savings and recovered revenue against $255K in platform investment over three years)",
+          "assumptions": [
+            "Rep hourly cost blended at $75/hr including benefits and overhead",
+            "50% recovery of lost selling time (conservative; benchmark customers see 55-65%)",
+            "Pipeline leakage estimated from reply rate decline and missed follow-up analysis shared in discovery",
+            "Tool cost savings realized immediately upon contract expiration of current vendors"
+          ]
+        },
+        "implementation_plan": [
+          {
+            "phase": "Foundation",
+            "duration": "Weeks 1-3",
+            "milestones": "CRM integration configured, data migration from Outreach and Gong complete, admin users trained, sequence templates built",
+            "owner": "Joint: our implementation team + Zoom RevOps"
+          },
+          {
+            "phase": "Pilot team rollout",
+            "duration": "Weeks 4-6",
+            "milestones": "25-rep pilot team live, baseline metrics established, initial coaching console configured, manager training complete",
+            "owner": "Joint: our CSM + Zoom sales managers"
+          },
+          {
+            "phase": "Full rollout",
+            "duration": "Weeks 7-10",
+            "milestones": "All 140 reps onboarded, legacy tools decommissioned, pipeline dashboards live for leadership, performance benchmarks set",
+            "owner": "Zoom RevOps with our enablement support"
+          },
+          {
+            "phase": "SKO enablement",
+            "duration": "Weeks 11-14",
+            "milestones": "SKO training materials created, certification program launched, advanced features enabled, executive reporting finalized",
+            "owner": "Joint: our enablement team + Zoom L&D"
+          }
+        ],
+        "pricing": {
+          "tiers": [
+            {
+              "tier": "Professional (recommended)",
+              "included": "Full sequence builder, conversation intelligence, pipeline dashboard, AI personalization, manager console, standard integrations, dedicated CSM",
+              "price": "$85,000/year (140 seats at ~$50.60/seat/month)"
+            },
+            {
+              "tier": "Enterprise",
+              "included": "Everything in Professional plus advanced AI coaching, custom reporting, premium API access, SSO/SCIM, dedicated solutions engineer",
+              "price": "$118,000/year (140 seats at ~$70.24/seat/month)"
+            }
+          ],
+          "not_included_in_any_tier": "Custom data warehouse integrations, white-glove migration services for non-standard CRM configurations, and on-site training beyond the SKO enablement package",
+          "payment_terms": "Net 30, billed annually. Quarterly billing available at 8% uplift.",
+          "contract_length": "12 months with option to lock in Year 2 pricing at current rates if signed by September 10, 2026"
+        },
+        "why_us": [
+          "Only platform that natively unifies sequencing, conversation intelligence, and pipeline management—no bolt-on integrations to maintain",
+          "Deployed at 14 companies with 100+ rep sales teams in the past 18 months, including three in the collaboration/SaaS space",
+          "AI personalization engine trained on 2.8 billion sales interactions, delivering measurably higher reply rates than template-based approaches",
+          "Average implementation time of 8.5 weeks for teams your size, with a 97% on-time go-live rate",
+          "Named a Leader in Forrester's 2026 Wave for Sales Engagement Platforms"
+        ],
+        "references": [
+          {
+            "company": "Notion",
+            "use_case": "Consolidated from Outreach + Chorus to our platform for 95-person sales team; saw 52% improvement in outbound reply rates within first quarter",
+            "available": "VP Sales available for a 20-minute reference call"
+          },
+          {
+            "company": "Calendly",
+            "use_case": "Rolled out across 120 reps in 7 weeks; reduced admin time by 2.1 hours per rep per day and improved forecast accuracy by 34%",
+            "available": "Head of RevOps available for a reference call or email exchange"
+          }
+        ],
+        "next_steps": [
+          "Rachel and team review this proposal and flag any questions or adjustments by August 18",
+          "30-minute call to finalize scope and address outstanding questions (week of August 18)",
+          "Legal and procurement review of MSA and order form (August 25 - September 5)",
+          "Contract signed by September 10 to lock in current pricing and meet the March SKO timeline",
+          "Kickoff call with implementation team within 5 business days of signature"
+        ]
+      }
+    },
+    {
+      "input": {
+        "prospect_company": "Walmart",
+        "prospect_contact": "David Chen",
+        "prospect_title": "SVP of Enterprise Data & Analytics",
+        "product": "Data integration solution",
+        "acv": "$450,000",
+        "segment": "Enterprise",
+        "discovery_notes": "Walmart's data engineering team runs 14,000+ ETL jobs daily across a hybrid environment (on-prem Oracle, Azure Synapse, Snowflake, and Databricks). Current integration layer is a mix of legacy Informatica and custom Python scripts. Data freshness SLA breaches have increased 340% YoY. They lose an estimated $2.8M/quarter in markdown optimization delays because merchandising data arrives too late. The team has 35 data engineers spending 60% of their time on pipeline maintenance rather than building new capabilities."
+      },
+      "output": {
+        "prepared_for": {
+          "company": "Walmart Inc.",
+          "contact": "David Chen",
+          "title": "SVP of Enterprise Data & Analytics"
+        },
+        "prepared_by": "Natasha Reeves, Enterprise Account Director",
+        "date": "August 11, 2026",
+        "valid_through": "October 10, 2026",
+        "executive_summary": {
+          "problem": "Walmart's data integration layer—a patchwork of legacy Informatica pipelines and custom Python scripts—is failing to keep pace with 14,000+ daily ETL jobs across four platforms. Data freshness SLA breaches have risen 340% year-over-year, and late-arriving merchandising data is costing an estimated $11.2M annually in suboptimal markdown decisions.",
+          "solution": "A unified data integration platform that provides a single control plane across Walmart's hybrid environment, replacing manual pipeline management with automated orchestration, intelligent error handling, and real-time data freshness monitoring.",
+          "result": "Based on deployments at comparable retail enterprises, Walmart can expect to reduce SLA breaches by 80%+, recover 60% of data engineering time currently spent on maintenance, and accelerate merchandising data delivery from hours to minutes.",
+          "investment": "$450,000 annually for the enterprise platform, representing less than 4% of the estimated $11.2M in annual markdown optimization losses alone.",
+          "timeline_to_value": "First production workloads migrated within 8 weeks, critical merchandising pipelines live within 14 weeks, full legacy migration within 6 months."
+        },
+        "their_situation": "Walmart processes more retail data than nearly any organization on the planet. The data engineering team manages over 14,000 ETL jobs every day, moving data between on-premises Oracle databases, Azure Synapse, Snowflake, and Databricks. This hybrid architecture evolved organically over a decade, and the integration layer hasn't kept up.\n\nToday, roughly half of those 14,000 jobs run on legacy Informatica pipelines that were originally designed for batch processing in an on-prem-only world. The other half are custom Python scripts written by individual engineers over the years—many poorly documented, some maintained by engineers who have since left the company. When something breaks at 2 AM, the on-call engineer often has to reverse-engineer the script before they can fix it.\n\nThe business impact is significant and growing. Data freshness SLA breaches have increased 340% year-over-year. When merchandising data arrives late, the pricing optimization algorithms that depend on it either run on stale data or don't run at all. David's team estimates this costs Walmart approximately $2.8 million per quarter in suboptimal markdown decisions—markdowns taken too late, or not taken at all because the data wasn't available in time.\n\nPerhaps most concerning is the human cost. Walmart's 35 data engineers are spending roughly 60% of their time—21 FTEs worth of effort—on pipeline maintenance, firefighting, and manual error resolution. That's talent that should be building the next generation of analytics capabilities instead of babysitting legacy ETL jobs.\n\nDavid's mandate from the CTO is clear: modernize the data integration layer, improve reliability to 99.5%+ SLA compliance, and free up engineering capacity for strategic projects—all without disrupting the 14,000 jobs that the business depends on every day.",
+        "proposed_solution": {
+          "included": [
+            {
+              "feature": "Unified hybrid orchestration engine",
+              "addresses": "Fragmented management across Informatica, Python scripts, and four data platforms"
+            },
+            {
+              "feature": "Automated pipeline migration toolkit",
+              "addresses": "Risk and effort of migrating 14,000+ legacy ETL jobs without disruption"
+            },
+            {
+              "feature": "Real-time data freshness monitoring and SLA tracking",
+              "addresses": "340% increase in SLA breaches and lack of proactive alerting"
+            },
+            {
+              "feature": "Intelligent error handling with auto-remediation",
+              "addresses": "2 AM firefighting and manual error resolution consuming 60% of engineering time"
+            },
+            {
+              "feature": "Data lineage and pipeline documentation",
+              "addresses": "Undocumented Python scripts and institutional knowledge loss"
+            },
+            {
+              "feature": "Enterprise security and compliance controls (SOC 2 Type II, FedRAMP)",
+              "addresses": "Walmart's enterprise security requirements for data handling and access control"
+            },
+            {
+              "feature": "Dedicated solutions architecture team for migration planning",
+              "addresses": "Complexity of migrating critical production workloads without downtime"
+            }
+          ],
+          "not_included": [
+            {
+              "item": "Data quality and master data management",
+              "reason": "Walmart has an existing MDM initiative; integration platform will connect to it but not replace it"
+            },
+            {
+              "item": "BI/reporting layer",
+              "reason": "Walmart's Tableau and Power BI deployments are out of scope; platform provides data feeds to existing BI tools"
+            },
+            {
+              "item": "On-premises hardware or infrastructure",
+              "reason": "Platform is SaaS-delivered with hybrid agents deployed in Walmart's VPC; no additional hardware required"
+            }
+          ]
+        },
+        "business_case": {
+          "current_state_costs": [
+            {
+              "cost_element": "Informatica licenses and maintenance",
+              "current": "$1,200,000/year",
+              "with_product": "$0 (replaced over 6-month migration)",
+              "annual_savings": "$1,200,000"
+            },
+            {
+              "cost_element": "Data engineering time on maintenance (21 FTEs at $185K fully loaded)",
+              "current": "$3,885,000/year",
+              "with_product": "$1,295,000/year (7 FTEs on maintenance, 14 FTEs freed for strategic work)",
+              "annual_savings": "$2,590,000"
+            },
+            {
+              "cost_element": "Markdown optimization losses from late data",
+              "current": "$11,200,000/year",
+              "with_product": "$2,240,000/year (80% reduction in late-arriving data)",
+              "annual_savings": "$8,960,000"
+            },
+            {
+              "cost_element": "Incident response and after-hours firefighting",
+              "current": "$420,000/year",
+              "with_product": "$84,000/year (auto-remediation handles 80% of incidents)",
+              "annual_savings": "$336,000"
+            }
+          ],
+          "total_annual_savings": "$13,086,000 (includes tool consolidation, productivity recovery, and revenue impact)",
+          "payback_period": "12.5 days based on total annual savings; 4.5 months based on tool consolidation alone",
+          "three_year_roi": "8,624% ($39.3M in total savings against $1.35M in platform investment over three years)",
+          "assumptions": [
+            "Data engineering fully loaded cost of $185K based on Walmart's published compensation data for senior data engineers in Bentonville",
+            "Markdown optimization impact based on David's team estimate of $2.8M/quarter, validated against industry benchmarks for retailers of Walmart's scale",
+            "80% SLA breach reduction based on results at comparable retail enterprise deployments (Target, Kroger)",
+            "Informatica sunset assumed at end of Year 1 migration; dual-running costs absorbed in implementation budget"
+          ]
+        },
+        "implementation_plan": [
+          {
+            "phase": "Discovery & Architecture",
+            "duration": "Weeks 1-4",
+            "milestones": "Complete pipeline audit and dependency mapping, architecture design for hybrid deployment, security review and VPC configuration, migration priority ranking",
+            "owner": "Joint: our solutions architects + Walmart data engineering leads"
+          },
+          {
+            "phase": "Critical Path Migration",
+            "duration": "Weeks 5-14",
+            "milestones": "Top 500 merchandising-critical pipelines migrated and validated, real-time SLA monitoring live, auto-remediation enabled for Tier 1 pipelines, parallel running with Informatica",
+            "owner": "Joint: our migration engineers + Walmart pipeline owners"
+          },
+          {
+            "phase": "Broad Migration",
+            "duration": "Weeks 15-26",
+            "milestones": "Remaining 13,500 pipelines migrated in priority waves, Python scripts converted to managed pipelines, legacy Informatica pipelines decommissioned, team training complete",
+            "owner": "Walmart data engineering with our advisory support"
+          },
+          {
+            "phase": "Optimization & Handoff",
+            "duration": "Weeks 27-30",
+            "milestones": "Performance tuning, advanced orchestration rules, executive dashboard finalized, runbook documentation, formal handoff to Walmart operations",
+            "owner": "Joint: our CSM + Walmart data platform team"
+          }
+        ],
+        "pricing": {
+          "tiers": [
+            {
+              "tier": "Enterprise (recommended)",
+              "included": "Unlimited pipelines, hybrid orchestration engine, auto-remediation, SLA monitoring, data lineage, migration toolkit, dedicated CSM and solutions architect, 24/7 support with 15-minute P1 response",
+              "price": "$450,000/year"
+            },
+            {
+              "tier": "Enterprise Premium",
+              "included": "Everything in Enterprise plus custom SLA guarantees with financial penalties, dedicated on-site solutions architect for first 6 months, executive quarterly business reviews, priority roadmap input",
+              "price": "$620,000/year"
+            }
+          ],
+          "not_included_in_any_tier": "Custom connector development for proprietary legacy systems (scoped and quoted separately), professional services for organizational change management, and third-party cloud infrastructure costs",
+          "payment_terms": "Net 45, billed annually. Semi-annual billing available at no additional cost for contracts of $400K+.",
+          "contract_length": "36 months recommended to align with full migration timeline and maximize ROI; 24-month option available at 7% price adjustment"
+        },
+        "why_us": [
+          "Only data integration platform purpose-built for hybrid environments with native connectors for Oracle, Azure Synapse, Snowflake, and Databricks—no middleware required",
+          "Automated migration toolkit has converted over 180,000 legacy Informatica pipelines across 40+ enterprise customers with 99.7% accuracy",
+          "Deployed at three of the top 10 US retailers, processing over 50,000 combined ETL jobs daily in production",
+          "Auto-remediation engine resolves 78% of pipeline failures without human intervention, based on patterns learned from 2.1 billion job executions",
+          "SOC 2 Type II, FedRAMP Moderate, and HITRUST certified—meeting Walmart's enterprise security requirements without exceptions"
+        ],
+        "references": [
+          {
+            "company": "Target",
+            "use_case": "Migrated 8,200 ETL pipelines from legacy Informatica to our platform across hybrid cloud environment; reduced SLA breaches by 91% and freed 12 data engineers for strategic projects",
+            "available": "VP of Data Engineering available for a reference call under NDA"
+          },
+          {
+            "company": "Kroger",
+            "use_case": "Deployed for real-time pricing and inventory data integration across 2,700 stores; achieved sub-5-minute data freshness for merchandising analytics, down from 4-hour batch cycles",
+            "available": "Director of Data Platform available for email-based reference"
+          },
+          {
+            "company": "Maersk",
+            "use_case": "Unified data integration across 12 legacy systems during post-acquisition consolidation; completed migration in 5 months, 3 weeks ahead of schedule",
+            "available": "CTO available for executive reference conversation"
+          }
+        ],
+        "next_steps": [
+          "David and team review this proposal and schedule a follow-up to discuss questions (by August 22)",
+          "Technical deep dive with Walmart's data engineering leads and our solutions architects (week of August 25)",
+          "Pipeline audit and migration complexity assessment (2-week engagement, begins upon verbal approval)",
+          "Legal and procurement review of MSA and enterprise order form (September 8-26)",
+          "Contract execution by October 10 to begin implementation in Q4 and complete critical path migration by end of January 2027"
+        ]
+      }
+    },
+    {
+      "input": {
+        "prospect_company": "Canva",
+        "prospect_contact": "Priya Nair",
+        "prospect_title": "Head of Customer Success",
+        "product": "Customer success platform",
+        "acv": "$35,000",
+        "segment": "Growth-stage",
+        "discovery_notes": "Canva's CS team of 22 CSMs manages 1,400 accounts across SMB and mid-market segments. Currently using Salesforce for CRM and a combination of Google Sheets and Slack alerts for health scoring. No automated renewal tracking—CSMs manually check contract dates. NRR has dipped from 118% to 109% over the past two quarters. Priya wants a system that surfaces at-risk accounts proactively and scales their high-touch model without adding headcount."
+      },
+      "output": {
+        "prepared_for": {
+          "company": "Canva Pty Ltd",
+          "contact": "Priya Nair",
+          "title": "Head of Customer Success"
+        },
+        "prepared_by": "Marcus Liu, Account Executive",
+        "date": "August 11, 2026",
+        "valid_through": "September 10, 2026",
+        "executive_summary": {
+          "problem": "Canva's 22-person CS team is managing 1,400 accounts with manual health scoring and no automated renewal tracking, contributing to a 9-point NRR decline from 118% to 109% over two quarters. At Canva's scale, each point of NRR represents significant ARR impact, and the current approach won't scale without proportional headcount growth.",
+          "solution": "A customer success platform that replaces manual health scoring with automated, multi-signal health monitoring, provides proactive at-risk account alerts, and automates renewal tracking and expansion identification—enabling Canva's CS team to scale coverage without adding headcount.",
+          "result": "Based on growth-stage SaaS benchmarks, Canva can expect to recover 4-6 points of NRR within two quarters, reduce time-to-intervention on at-risk accounts from weeks to hours, and increase CSM portfolio capacity by 30-40%.",
+          "investment": "$35,000 annually—roughly the cost of 0.15 FTE on the CS team, replacing effort that currently consumes 3-4 FTEs worth of manual tracking and spreadsheet maintenance.",
+          "timeline_to_value": "Health scores live within 3 weeks, renewal automation within 5 weeks, full rollout within 7 weeks."
+        },
+        "their_situation": "Canva has built one of the most beloved design tools in the world, and their customer success team is a key reason why. Priya's 22 CSMs have maintained strong relationships with their 1,400 accounts, delivering the kind of high-touch experience that has driven Canva's impressive growth.\n\nBut the systems underneath that experience are held together with duct tape. Health scoring lives in a Google Sheet that three senior CSMs update weekly based on gut feel and whatever data they can pull from Salesforce. Renewal dates are tracked in another spreadsheet that someone started two years ago and has been manually maintained ever since. When a renewal is 60 days out, a Slack bot pings the assigned CSM—but only if someone remembered to update the spreadsheet with the correct date.\n\nThe cracks are starting to show. NRR has dropped from 118% to 109% over the past two quarters. In the post-mortem analysis, Priya's team found that 40% of churned accounts showed warning signs—declining product usage, support ticket spikes, or champion departures—weeks or months before they churned. But with no system to surface those signals, the CSMs didn't see them until the customer was already in cancellation conversations.\n\nPriya's challenge is clear: she needs to scale the quality of Canva's customer success motion without proportionally scaling headcount. At a 64:1 account-to-CSM ratio, her team is already stretched. Adding more accounts per rep without better tooling will accelerate the NRR decline. But hiring more CSMs at Canva's growth stage isn't in the budget.\n\nThe answer has to be leverage—better data, smarter automation, and proactive signals that help CSMs focus their limited time on the accounts that need attention most.",
+        "proposed_solution": {
+          "included": [
+            {
+              "feature": "Multi-signal health scoring engine",
+              "addresses": "Manual spreadsheet-based health scoring that misses early warning signals"
+            },
+            {
+              "feature": "Automated renewal tracking and playbook triggers",
+              "addresses": "Manual renewal date tracking and inconsistent renewal preparation"
+            },
+            {
+              "feature": "At-risk account alerts with recommended actions",
+              "addresses": "40% of churned accounts showing undetected warning signs"
+            },
+            {
+              "feature": "Expansion signal identification",
+              "addresses": "NRR decline from missed upsell and cross-sell opportunities"
+            },
+            {
+              "feature": "CSM task prioritization dashboard",
+              "addresses": "64:1 account ratio making it impossible to give equal attention to all accounts"
+            },
+            {
+              "feature": "Salesforce bi-directional integration",
+              "addresses": "Need to work within existing CRM infrastructure, not replace it"
+            }
+          ],
+          "not_included": [
+            {
+              "item": "Support ticket management or helpdesk functionality",
+              "reason": "Canva has an existing support tool; platform will ingest support data as a health signal but not replace the support workflow"
+            },
+            {
+              "item": "Product analytics or event tracking infrastructure",
+              "reason": "Platform integrates with Canva's existing product analytics (Amplitude) to consume usage data; does not replace the analytics layer"
+            }
+          ]
+        },
+        "business_case": {
+          "current_state_costs": [
+            {
+              "cost_element": "NRR decline (9 points, from 118% to 109%)",
+              "current": "Estimated $1,800,000/year in lost expansion and increased churn at current ARR base",
+              "with_product": "$720,000/year (recover 5 NRR points in Year 1)",
+              "annual_savings": "$1,080,000"
+            },
+            {
+              "cost_element": "CSM time on manual health scoring and renewal tracking",
+              "current": "~3.5 FTEs worth of effort ($560,000/year at $160K fully loaded)",
+              "with_product": "~0.5 FTEs ($80,000/year)",
+              "annual_savings": "$480,000"
+            },
+            {
+              "cost_element": "Late-stage save attempts on at-risk accounts",
+              "current": "$200,000/year in reactive discounting and concessions",
+              "with_product": "$60,000/year (earlier intervention reduces need for concessions)",
+              "annual_savings": "$140,000"
+            }
+          ],
+          "total_annual_savings": "$1,700,000 (NRR recovery, time savings, and reduced concessions)",
+          "payback_period": "7.5 days based on total impact; 2.7 months based on operational time savings alone",
+          "three_year_roi": "14,471% ($15.2M in total savings against $105K platform investment, assuming NRR improvements compound on growing ARR base)",
+          "assumptions": [
+            "Current ARR base estimated at $20M for NRR impact calculation based on publicly available Canva Teams revenue data",
+            "CSM fully loaded cost of $160K based on Australian market rates for Canva's Sydney headquarters",
+            "5-point NRR recovery in Year 1 is conservative; benchmark customers see 6-8 point improvement",
+            "ROI compounds in Years 2-3 as ARR base grows and NRR improvements are maintained"
+          ]
+        },
+        "implementation_plan": [
+          {
+            "phase": "Integration & Configuration",
+            "duration": "Weeks 1-3",
+            "milestones": "Salesforce integration live, Amplitude product usage data flowing, health score model configured with Canva-specific signals, renewal dates imported and validated",
+            "owner": "Joint: our implementation team + Canva RevOps"
+          },
+          {
+            "phase": "Pilot Team Launch",
+            "duration": "Weeks 3-5",
+            "milestones": "6-CSM pilot team live, health scores validated against known account outcomes, renewal playbooks activated, at-risk alerts tuned to reduce noise",
+            "owner": "Joint: our CSM + Priya's pilot team leads"
+          },
+          {
+            "phase": "Full Team Rollout",
+            "duration": "Weeks 5-7",
+            "milestones": "All 22 CSMs onboarded, legacy spreadsheets decommissioned, manager dashboard live, baseline metrics established for NRR tracking",
+            "owner": "Canva CS team with our enablement support"
+          }
+        ],
+        "pricing": {
+          "tiers": [
+            {
+              "tier": "Growth (recommended)",
+              "included": "Up to 2,000 managed accounts, multi-signal health scoring, renewal automation, at-risk alerts, expansion signals, Salesforce integration, dedicated CSM, email and chat support",
+              "price": "$35,000/year (22 seats at ~$132.58/seat/month)"
+            },
+            {
+              "tier": "Scale",
+              "included": "Everything in Growth plus unlimited accounts, custom health score models, API access, advanced reporting, SSO, dedicated Slack channel support",
+              "price": "$52,000/year (22 seats at ~$196.97/seat/month)"
+            }
+          ],
+          "not_included_in_any_tier": "Custom integrations beyond standard connectors (Salesforce, Amplitude, Zendesk, Slack), professional services for health score model tuning beyond initial setup, and custom training content development",
+          "payment_terms": "Net 30, billed annually. Monthly billing available at 15% uplift.",
+          "contract_length": "12 months; annual plans include one complimentary health score model review at the 6-month mark"
+        },
+        "why_us": [
+          "Purpose-built for growth-stage CS teams managing 50-100 accounts per CSM, unlike enterprise platforms that require 6-month implementations and dedicated admins",
+          "Health scoring engine combines product usage, support interactions, engagement signals, and financial data—no manual spreadsheet input required",
+          "Average implementation time of 5.2 weeks for teams under 30 CSMs, with a self-serve configuration that doesn't require a dedicated RevOps resource",
+          "Used by 140+ growth-stage SaaS companies including Loom, Miro, and Linear, with an average NRR improvement of 7 points in the first two quarters",
+          "Native Salesforce integration that syncs bi-directionally in real time, not batch—CSMs never have to leave their existing workflow"
+        ],
+        "references": [
+          {
+            "company": "Loom",
+            "use_case": "18-person CS team managing 900 accounts; recovered 6 NRR points in first quarter and reduced at-risk account churn by 44%",
+            "available": "Head of CS available for a reference call"
+          },
+          {
+            "company": "Miro",
+            "use_case": "Scaled from 20 to 35 CSMs without adding health scoring headcount; automated renewal tracking eliminated 100% of missed renewal conversations",
+            "available": "VP of Customer Success available for email reference"
+          }
+        ],
+        "next_steps": [
+          "Priya reviews this proposal with her team and identifies any questions or scope adjustments (by August 18)",
+          "Technical scoping call with Canva RevOps to confirm Salesforce and Amplitude integration requirements (week of August 18)",
+          "Pilot team selection and success criteria alignment (by August 25)",
+          "Contract signed by September 10 to begin implementation in September and have the pilot team live by mid-October",
+          "Full team rollout targeting mid-November, with NRR impact measurable by end of Q1 2027"
+        ]
+      }
+    }
+  ]
+}

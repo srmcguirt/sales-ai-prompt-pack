@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Discovery Call Prep Output",
+  "type": "object",
+  "properties": {
+    "account": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "title"]
+    },
+    "call_length_minutes": {
+      "type": "integer"
+    },
+    "current_knowledge": {
+      "type": "object",
+      "properties": {
+        "known_pain_signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "known_trigger_events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_uncover": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["known_pain_signals", "known_trigger_events", "must_uncover"]
+    },
+    "deal_hypothesis": {
+      "type": "string"
+    },
+    "call_agenda": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string"
+          },
+          "goal": {
+            "type": "string"
+          }
+        },
+        "required": ["time", "section", "goal"]
+      }
+    },
+    "discovery_questions": {
+      "type": "object",
+      "properties": {
+        "situation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              }
+            },
+            "required": ["question", "purpose"]
+          }
+        },
+        "problem": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              }
+            },
+            "required": ["question", "purpose"]
+          }
+        },
+        "impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              }
+            },
+            "required": ["question", "purpose"]
+          }
+        },
+        "decision": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              }
+            },
+            "required": ["question", "purpose"]
+          }
+        },
+        "competitive": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              }
+            },
+            "required": ["question", "purpose"]
+          }
+        }
+      },
+      "required": ["situation", "problem", "impact", "decision", "competitive"]
+    },
+    "hypothesis_validation_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": ["question", "context"]
+      }
+    },
+    "handling_the_reversal": {
+      "type": "object",
+      "properties": {
+        "script": {
+          "type": "string"
+        }
+      },
+      "required": ["script"]
+    },
+    "objection_handlers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "objection": {
+            "type": "string"
+          },
+          "response_framework": {
+            "type": "string"
+          },
+          "script_starter": {
+            "type": "string"
+          }
+        },
+        "required": ["objection", "response_framework", "script_starter"]
+      }
+    },
+    "next_step_scripts": {
+      "type": "object",
+      "properties": {
+        "great_call": {
+          "type": "string"
+        },
+        "okay_call": {
+          "type": "string"
+        },
+        "uncertain_call": {
+          "type": "string"
+        }
+      },
+      "required": ["great_call", "okay_call", "uncertain_call"]
+    },
+    "qualification_checkpoint": {
+      "type": "object",
+      "properties": {
+        "framework": {
+          "type": "string"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "element": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["known", "unknown"]
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "required": ["element", "status", "notes"]
+          }
+        }
+      },
+      "required": ["framework", "elements"]
+    }
+  },
+  "required": [
+    "account",
+    "contact",
+    "call_length_minutes",
+    "current_knowledge",
+    "deal_hypothesis",
+    "call_agenda",
+    "discovery_questions",
+    "objection_handlers",
+    "next_step_scripts",
+    "qualification_checkpoint"
+  ]
+}

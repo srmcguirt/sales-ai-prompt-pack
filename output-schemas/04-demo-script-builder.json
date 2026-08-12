@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Demo Script Builder Output",
+  "type": "object",
+  "properties": {
+    "prospect": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "seniority": {
+          "type": "string"
+        },
+        "function": {
+          "type": "string"
+        }
+      },
+      "required": ["title", "seniority", "function"]
+    },
+    "time_allotted_minutes": {
+      "type": "integer"
+    },
+    "pain_points_confirmed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "desired_outcome": {
+      "type": "string"
+    },
+    "act_1_their_world": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "narrator_script": {
+          "type": "string"
+        },
+        "before_scenario": {
+          "type": "string"
+        },
+        "check_in_question": {
+          "type": "string"
+        }
+      },
+      "required": ["duration", "goal", "narrator_script", "before_scenario", "check_in_question"]
+    },
+    "act_2_the_product": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string"
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "feature": {
+                "type": "string"
+              },
+              "addresses_pain": {
+                "type": "string"
+              },
+              "setup_script": {
+                "type": "string"
+              },
+              "walkthrough": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "transition": {
+                "type": "string"
+              },
+              "check_in": {
+                "type": "string"
+              }
+            },
+            "required": ["feature", "addresses_pain", "setup_script", "walkthrough", "transition", "check_in"]
+          }
+        }
+      },
+      "required": ["duration", "scenes"]
+    },
+    "act_3_future_state": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "quantified_outcome": {
+          "type": "string"
+        }
+      },
+      "required": ["duration", "goal", "script", "quantified_outcome"]
+    },
+    "objections_during_demo": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "objection": {
+            "type": "string"
+          },
+          "when_it_appears": {
+            "type": "string"
+          },
+          "response": {
+            "type": "string"
+          }
+        },
+        "required": ["objection", "when_it_appears", "response"]
+      }
+    },
+    "close_and_next_step": {
+      "type": "object",
+      "properties": {
+        "closing_question": {
+          "type": "string"
+        },
+        "if_yes": {
+          "type": "string"
+        },
+        "if_partial": {
+          "type": "string"
+        },
+        "if_skeptical": {
+          "type": "string"
+        }
+      },
+      "required": ["closing_question", "if_yes", "if_partial", "if_skeptical"]
+    },
+    "post_demo_followup": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        }
+      },
+      "required": ["subject", "body"]
+    }
+  },
+  "required": [
+    "prospect",
+    "audience",
+    "time_allotted_minutes",
+    "pain_points_confirmed",
+    "desired_outcome",
+    "act_1_their_world",
+    "act_2_the_product",
+    "act_3_future_state",
+    "close_and_next_step"
+  ]
+}

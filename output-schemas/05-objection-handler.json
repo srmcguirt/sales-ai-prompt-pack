@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Objection Handler Output",
+  "type": "object",
+  "properties": {
+    "objection_stated": {
+      "type": "string"
+    },
+    "objection_type": {
+      "type": "string",
+      "enum": ["Price", "Timeline", "Authority", "Need", "Trust", "Competition", "Status quo", "Stall"]
+    },
+    "deal_risk_assessment": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["Low", "Medium", "High"]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["level", "reason"]
+    },
+    "underlying_concerns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "concern": {
+            "type": "string"
+          },
+          "likelihood": {
+            "type": "string",
+            "enum": ["most likely", "possible", "less likely"]
+          },
+          "reasoning": {
+            "type": "string"
+          }
+        },
+        "required": ["concern", "likelihood", "reasoning"]
+      }
+    },
+    "clarifying_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "uncovers": {
+            "type": "string"
+          }
+        },
+        "required": ["question", "uncovers"]
+      }
+    },
+    "response_framework": {
+      "type": "object",
+      "properties": {
+        "acknowledge": {
+          "type": "string"
+        },
+        "explore": {
+          "type": "string"
+        },
+        "respond": {
+          "type": "object",
+          "properties": {
+            "if_concern_a": {
+              "type": "string"
+            },
+            "if_concern_b": {
+              "type": "string"
+            },
+            "if_concern_c": {
+              "type": "string"
+            }
+          },
+          "required": ["if_concern_a", "if_concern_b", "if_concern_c"]
+        },
+        "reframe": {
+          "type": "string"
+        },
+        "next_step": {
+          "type": "string"
+        }
+      },
+      "required": ["acknowledge", "explore", "respond", "reframe", "next_step"]
+    },
+    "full_response_script": {
+      "type": "string"
+    },
+    "what_not_to_say": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "wrong_response": {
+            "type": "string"
+          },
+          "why_it_backfires": {
+            "type": "string"
+          }
+        },
+        "required": ["wrong_response", "why_it_backfires"]
+      }
+    },
+    "dead_deal_signals": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "objection_stated",
+    "objection_type",
+    "deal_risk_assessment",
+    "underlying_concerns",
+    "clarifying_questions",
+    "response_framework",
+    "full_response_script",
+    "what_not_to_say"
+  ]
+}

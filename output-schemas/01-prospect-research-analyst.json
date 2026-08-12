@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prospect Research Analyst Output",
+  "type": "object",
+  "properties": {
+    "account": {
+      "type": "string"
+    },
+    "assessed_icp_fit": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "string",
+          "enum": ["Strong", "Moderate", "Weak"]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["rating", "reason"]
+    },
+    "timing_signal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["Active buying window", "Passive research", "Unknown"]
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["status", "signals"]
+    },
+    "company_overview": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "string"
+        },
+        "funding_stage": {
+          "type": "string"
+        },
+        "growth_trajectory": {
+          "type": "string",
+          "enum": ["growing", "shrinking", "stable"]
+        },
+        "growth_evidence": {
+          "type": "string"
+        },
+        "tech_stack_signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "industry_context": {
+          "type": "string"
+        }
+      },
+      "required": ["size", "funding_stage", "growth_trajectory", "growth_evidence", "tech_stack_signals", "industry_context"]
+    },
+    "trigger_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "sales_implication": {
+            "type": "string"
+          }
+        },
+        "required": ["event", "date", "sales_implication"]
+      }
+    },
+    "stakeholder_map": {
+      "type": "object",
+      "properties": {
+        "primary_target": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "why_them": {
+              "type": "string"
+            },
+            "signal": {
+              "type": "string"
+            },
+            "contact_approach": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "title", "why_them", "signal", "contact_approach"]
+        },
+        "secondary_target": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "why_them": {
+              "type": "string"
+            },
+            "signal": {
+              "type": "string"
+            },
+            "contact_approach": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "title", "why_them", "signal", "contact_approach"]
+        },
+        "economic_buyer": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "buying_authority_evidence": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "title", "buying_authority_evidence"]
+        }
+      },
+      "required": ["primary_target", "secondary_target", "economic_buyer"]
+    },
+    "pain_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pain": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer"
+          }
+        },
+        "required": ["pain", "evidence", "rank"]
+      }
+    },
+    "competitive_context": {
+      "type": "object",
+      "properties": {
+        "current_vendor": {
+          "type": "string"
+        },
+        "how_known": {
+          "type": "string"
+        },
+        "competitive_risks": {
+          "type": "string"
+        },
+        "displacement_angle": {
+          "type": "string"
+        }
+      },
+      "required": ["current_vendor", "how_known", "competitive_risks", "displacement_angle"]
+    },
+    "recommended_outreach": {
+      "type": "object",
+      "properties": {
+        "opening_hook": {
+          "type": "string"
+        },
+        "positioning_angle": {
+          "type": "string"
+        },
+        "call_to_action": {
+          "type": "string"
+        }
+      },
+      "required": ["opening_hook", "positioning_angle", "call_to_action"]
+    },
+    "research_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gap": {
+            "type": "string"
+          },
+          "where_to_look": {
+            "type": "string"
+          }
+        },
+        "required": ["gap", "where_to_look"]
+      }
+    },
+    "confidence_level": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "string",
+          "enum": ["High", "Medium", "Low"]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["rating", "reason"]
+    }
+  },
+  "required": [
+    "account",
+    "assessed_icp_fit",
+    "timing_signal",
+    "company_overview",
+    "trigger_events",
+    "stakeholder_map",
+    "pain_points",
+    "recommended_outreach",
+    "confidence_level"
+  ]
+}

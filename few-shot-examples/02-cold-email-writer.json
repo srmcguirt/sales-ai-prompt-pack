@@ -1,85 +1,220 @@
 {
-  "prompt": "02-cold-email-writer",
-  "version": "1.0.0",
+  "prompt_name": "Cold Email Writer",
   "examples": [
     {
-      "input": {
-        "account": "DataStream Analytics",
-        "contact_name": "Marcus Webb",
-        "contact_title": "VP of Revenue Operations",
-        "company_size": "~200 employees, Series B ($28M raised, announced 6 weeks ago)",
-        "trigger_event": "Series B announcement + 4 Sales Operations job postings in last 45 days",
-        "product": "Multi-agent orchestration platform that automates CRM data enrichment and sales workflow",
-        "pain_signal": "Job postings mention 'manual data entry' and 'CRM hygiene' as key responsibilities"
-      },
+      "input": "Write cold outreach emails to David Singleton, VP of Engineering at Stripe, about our code review platform. Trigger: Stripe just announced they are expanding their payments infrastructure team by 200 engineers. Our product automates code review with AI-powered suggestions, reduces review cycle time by 65%, and integrates with GitHub Enterprise. Stripe is known for their high engineering standards and rigorous code review culture.",
       "output": {
-        "variant_a": {
-          "subject": "datastream's series b + 4 revops hires",
-          "body": "Marcus,\n\nCongratulations on the Series B — saw the announcement and noticed you're building out RevOps fast (4 open roles in 45 days).\n\nThe roles mention CRM hygiene and manual data entry as core responsibilities. Most RevOps teams at your stage are hiring for that because they haven't yet automated it — we help teams eliminate the manual piece so those hires can focus on strategy instead of data entry.\n\nWould a 20-minute call be worth it, or is this better timed after you've filled the team?\n\nAlex",
-          "word_count": 89,
-          "personalization_signal": "Specific reference to Series B timing + 4 RevOps job postings + job description language",
-          "angle": "Trigger event (Series B + hiring) → pain signal (job description language) → relevance"
+        "context": {
+          "account": "Stripe",
+          "contact": "David Singleton",
+          "title": "VP of Engineering",
+          "trigger": "Stripe expanding payments infrastructure team by 200 engineers",
+          "product": "AI-powered code review platform"
         },
-        "variant_b": {
-          "subject": "crm hygiene eating your revops team's time?",
-          "body": "Marcus,\n\nQuick question — with DataStream scaling post-Series B, how much of your RevOps team's time goes to manual CRM work versus actual strategy and analysis?\n\nAsking because the roles you're posting mention CRM hygiene as a core responsibility. That's usually a signal the manual work hasn't been automated yet. We help RevOps teams like yours get that time back — typically 12-15 hours per week per analyst.\n\nWorth 15 minutes to see if we could accelerate what you're building?\n\nAlex",
-          "word_count": 97,
-          "personalization_signal": "Question framed around their post-Series B scaling context",
-          "angle": "Problem-first → benchmark (12-15 hrs) → soft ask"
-        },
-        "variant_c": {
-          "subject": "what companies like datastream do at series b",
-          "body": "Marcus,\n\nPost-Series B RevOps scaling follows a pretty predictable pattern: headcount grows faster than process, CRM data quality degrades, and the team spends more time fixing data than using it.\n\nThe teams that avoid this hire RevOps people to run strategy, not data hygiene — and automate the manual work first. Your 4 open roles suggest you're in the early stages of building this.\n\nWe've helped 3 B2B SaaS companies in your exact situation (Series B, scaling RevOps) eliminate the manual CRM work entirely. Would that be useful context for what you're building?\n\nAlex",
-          "word_count": 104,
-          "personalization_signal": "Pattern recognition from similar companies at same stage",
-          "angle": "Social proof / pattern → relevance → case study reference"
-        },
-        "subject_analysis": {
-          "variant_a": "Lowercase, specific, references two concrete data points. Risk: may look like a data aggregator",
-          "variant_b": "Question format, specific pain language from their job posting. Strong if they recognize the connection",
-          "variant_c": "Pattern/category framing. Works well if they see themselves as part of a recognizable scaling pattern"
-        },
-        "recommended_sequence": "Send Variant A on Tuesday morning. If no reply by Thursday, send Variant B with a new subject (not 'Re:'). Day 7 without reply: Variant C with 'Last email' framing"
+        "variants": [
+          {
+            "variant": "A",
+            "subject": "200 new engineers, same review bottleneck?",
+            "body": "David,\n\nCongrats on the payments infrastructure expansion. Adding 200 engineers is exciting until every PR queue doubles.\n\nAt Stripe's scale, code review is a cultural strength. But I've seen teams like yours hit a wall: senior engineers spending 30%+ of their time reviewing instead of building, and junior engineers waiting 8+ hours for feedback.\n\nWe built an AI review layer that handles the first pass — catching style violations, security patterns, and common anti-patterns — so your senior engineers focus reviews on architecture and business logic.\n\nPlaid's infrastructure team cut their median review cycle from 14 hours to 5 hours after deploying us. Their senior engineers got back ~9 hours per week.\n\nWorth a 20-minute look to see if it fits Stripe's workflow?",
+            "word_count": 119,
+            "personalization_signal": "200-engineer expansion and Stripe's known code review culture",
+            "why_this_variant": "Problem-first approach. Leads with the scaling pain that comes with rapid team growth and connects it to a metric the VP of Engineering cares about: senior engineer leverage."
+          },
+          {
+            "variant": "B",
+            "subject": "How Plaid cut code review cycles by 64%",
+            "body": "David,\n\nWith 200 engineers joining the payments infrastructure team, your review throughput needs to scale just as fast.\n\nWe work with fintech engineering teams (Plaid, Brex, Ramp) that face the same challenge Stripe does: maintaining rigorous review standards without creating bottlenecks that slow shipping velocity.\n\nOur platform runs an AI-powered first pass on every PR — flagging security issues, suggesting improvements, and enforcing your team's coding standards automatically. Human reviewers then focus on what matters: design decisions and edge cases.\n\nThe result at Plaid: 64% faster review cycles, 40% fewer back-and-forth rounds, and their DORA metrics improved across the board.\n\nHappy to share the Plaid case study and show you a 15-minute demo tailored to Stripe's GitHub Enterprise setup.",
+            "word_count": 128,
+            "personalization_signal": "Fintech peer companies and GitHub Enterprise integration",
+            "why_this_variant": "Social proof approach. Leads with relevant fintech logos that Stripe respects as peers. Creates credibility through specificity."
+          },
+          {
+            "variant": "C",
+            "subject": "Quick question about Stripe's review process",
+            "body": "David,\n\nI'm curious — as Stripe scales the payments infra team by 200 engineers, how are you thinking about keeping review quality high without slowing down ship velocity?\n\nI ask because we've been working with engineering teams at your scale on this exact tradeoff. Most find that AI-assisted first-pass reviews let them maintain their bar while cutting cycle times significantly.\n\nThree things our fintech customers consistently tell us:\n\n1. Senior engineers reclaim 8-10 hours/week from routine reviews\n2. Junior engineers get faster, more consistent feedback\n3. Security and compliance patterns are caught before human review starts\n\nIf this is a problem you're thinking about, I'd love to hear how you're approaching it — even if we're not the right fit.",
+            "word_count": 127,
+            "personalization_signal": "Stripe's specific scaling challenge and low-pressure CTA",
+            "why_this_variant": "Curiosity-driven approach. Opens with a question rather than a pitch. Lower pressure CTA acknowledges David's seniority and avoids the hard sell."
+          }
+        ],
+        "subject_line_analysis": [
+          {
+            "variant": "A",
+            "why_it_works": "Creates tension between the exciting news (200 engineers) and the implied problem (bottleneck). The question mark invites the reader to self-diagnose.",
+            "risk": "Could feel presumptuous if Stripe believes they already have review scaling solved."
+          },
+          {
+            "variant": "B",
+            "why_it_works": "Leads with a specific result from a peer company. The 64% metric is concrete enough to be credible and compelling enough to open.",
+            "risk": "Looks like a marketing email. VPs get dozens of case-study subject lines per week."
+          },
+          {
+            "variant": "C",
+            "why_it_works": "Question-based subject lines have 10-15% higher open rates in enterprise outreach. Feels like a peer conversation rather than a sales pitch.",
+            "risk": "Vague enough that it might get deprioritized. No urgency driver."
+          }
+        ],
+        "recommended_send_sequence": [
+          {
+            "day": 1,
+            "variant": "A",
+            "note": "Lead with the problem-first variant. The 200-engineer expansion is timely and creates natural urgency. Best sent Tuesday or Wednesday morning."
+          },
+          {
+            "day": 3,
+            "variant": "B",
+            "note": "Follow up with social proof if no response. The Plaid case study adds credibility and gives a different reason to engage. Reply to the original thread."
+          },
+          {
+            "day": 7,
+            "variant": "C",
+            "note": "Final touch with the curiosity-driven approach. The low-pressure CTA works well as a sequence closer. If no response after this, move to a different channel (LinkedIn, warm intro)."
+          }
+        ]
       }
     },
     {
-      "input": {
-        "account": "Meridian Health Systems",
-        "contact_name": "Dr. Sarah Okonkwo",
-        "contact_title": "Chief Medical Information Officer",
-        "company_size": "~1,200 employees, regional health system",
-        "trigger_event": "CMIO role is newly created (LinkedIn shows 8 months in role)",
-        "product": "AI documentation platform that automates clinical note generation",
-        "pain_signal": "Recent press release mentions 'reducing physician burnout' as a 2026 strategic priority"
-      },
+      "input": "Write cold outreach emails to Kipp Bodnar, CMO at HubSpot, about our AI content analytics tool. Trigger: HubSpot recently launched their AI Content Hub and reported that customers using AI-generated content saw 30% lower engagement rates compared to human-written content. Our product analyzes content performance, identifies AI-generated content patterns that underperform, and provides rewrite recommendations that improve engagement by 2-3x. HubSpot's own marketing team produces 400+ blog posts per year.",
       "output": {
-        "variant_a": {
-          "subject": "physician documentation burden — meridian's 2026 priority",
-          "body": "Dr. Okonkwo,\n\nYour 2026 strategic focus on reducing physician burnout caught my attention — documentation burden is the #1 driver of burnout in most health systems we talk to.\n\nWe work with CMIOs who are building the case for AI-assisted documentation to give physicians time back. Most see 30-45 minutes per physician per day recovered within 90 days of deployment.\n\nIs this on your roadmap for 2026, or is it more of a 2027 initiative at this point?\n\nAlex",
-          "word_count": 85,
-          "personalization_signal": "Specific reference to their published 2026 strategic priority",
-          "angle": "Their stated priority → quantified outcome → timeline question"
+        "context": {
+          "account": "HubSpot",
+          "contact": "Kipp Bodnar",
+          "title": "CMO",
+          "trigger": "HubSpot AI Content Hub launch and reported 30% lower engagement for AI-generated content",
+          "product": "AI content analytics and optimization platform"
         },
-        "variant_b": {
-          "subject": "cmio documentation initiatives — worth a call?",
-          "body": "Dr. Okonkwo,\n\nCongratulations on the CMIO role at Meridian — it's clear from the organization's 2026 priorities that you're focused on physician experience.\n\nI'm reaching out because we help CMIOs build the business case and implementation plan for AI-assisted documentation — specifically for health systems your size where EHR documentation is creating the most friction.\n\nAre you in active evaluation mode for this, or still in the research phase?\n\nAlex",
-          "word_count": 79,
-          "personalization_signal": "Recognition of new role + connection to stated priority",
-          "angle": "New role acknowledgment → relevant positioning → stage-discovery question"
+        "variants": [
+          {
+            "variant": "A",
+            "subject": "The AI content quality gap you flagged",
+            "body": "Kipp,\n\nYour team's data on AI-generated content seeing 30% lower engagement is one of the most honest things a marketing platform has published this year.\n\nBut it creates an awkward position: HubSpot just launched AI Content Hub while simultaneously proving AI content underperforms. Your 400+ annual blog posts are probably already feeling this tension.\n\nWe built the fix for this. Our platform analyzes content performance patterns, identifies the specific AI-generated signals that tank engagement (repetitive structure, hedging language, generic hooks), and provides targeted rewrites that close the gap.\n\nBuzzFeed's editorial team used us to improve AI-assisted article engagement by 2.4x while keeping their production velocity high.\n\nWorth 20 minutes to explore how this could strengthen the AI Content Hub value proposition?",
+            "word_count": 126,
+            "personalization_signal": "HubSpot's own published data on AI content underperformance and Content Hub launch timing",
+            "why_this_variant": "Turns HubSpot's own data into the hook. Acknowledges the strategic tension between launching an AI content product and proving AI content underperforms. Makes Kipp the hero for being honest about the problem."
+          },
+          {
+            "variant": "B",
+            "subject": "Making AI Content Hub's output indistinguishable",
+            "body": "Kipp,\n\nIf AI-generated content consistently underperforms by 30%, Content Hub customers will eventually notice and churn. You need the AI output to be indistinguishable from your best human-written content.\n\nThat's exactly what our analytics platform does. We identify the 12 specific patterns that cause AI content to underperform (we analyzed 2M+ articles to find them) and provide real-time rewrite recommendations during content creation.\n\nIntegrated into Content Hub, this could be the difference between customers seeing AI as a novelty vs. a core workflow.\n\nMarketingProfs embedded our analytics into their content workflow and saw AI-assisted articles match human benchmarks within 6 weeks. Engagement gap went from -35% to -2%.\n\nI have some specific ideas on how this could work as a Content Hub feature. Can I share them?",
+            "word_count": 132,
+            "personalization_signal": "Content Hub product strategy and customer retention angle",
+            "why_this_variant": "Product-strategy approach. Frames our tool as a potential feature or integration for Content Hub rather than a separate purchase. Appeals to Kipp's product marketing instincts."
+          },
+          {
+            "variant": "C",
+            "subject": "400 blog posts/year — which ones are underperforming?",
+            "body": "Kipp,\n\nAt 400+ blog posts per year, HubSpot's content team is probably already using AI assistance for some portion. The question is: which posts are showing the 30% engagement drop your team identified, and what specifically is causing it?\n\nWe can answer that in about 10 minutes. Our platform ingests your content library, identifies which pieces carry AI-generation patterns, and maps those patterns to engagement metrics.\n\nNo pitch needed — I'll run a free analysis on HubSpot's public blog content and send you the results. If the data is useful, we can talk about what a full deployment looks like.\n\nIf not, you still get a free content audit. Fair?",
+            "word_count": 114,
+            "personalization_signal": "HubSpot's specific content volume and offer to analyze their public blog",
+            "why_this_variant": "Value-first approach. Offers a free content audit on publicly available data. Zero risk for Kipp, high value if the analysis reveals something useful. Creates reciprocity."
+          }
+        ],
+        "subject_line_analysis": [
+          {
+            "variant": "A",
+            "why_it_works": "References something Kipp's team published, making it feel like a response to their work rather than a cold pitch. The phrase 'you flagged' gives him credit.",
+            "risk": "Could feel like we are pointing out a vulnerability in their product strategy."
+          },
+          {
+            "variant": "B",
+            "why_it_works": "Frames the outcome in product terms that a CMO cares about. 'Indistinguishable' is a powerful word that implies quality parity.",
+            "risk": "Might get filtered as promotional. The word 'indistinguishable' could also trigger spam filters in some email clients."
+          },
+          {
+            "variant": "C",
+            "why_it_works": "Specific number (400) shows research. The question creates curiosity about their own content performance. Hard to resist wanting to know the answer.",
+            "risk": "If HubSpot's actual blog volume is different from 400, the specificity backfires."
+          }
+        ],
+        "recommended_send_sequence": [
+          {
+            "day": 1,
+            "variant": "C",
+            "note": "Lead with the value-first offer. A free content audit is a strong opener for a CMO who values data. The low commitment makes a response more likely."
+          },
+          {
+            "day": 3,
+            "variant": "A",
+            "note": "Follow up with the strategic angle if no response. The tension between Content Hub and AI underperformance data is a compelling hook for a second touch."
+          },
+          {
+            "day": 7,
+            "variant": "B",
+            "note": "Close with the product integration angle. If Kipp hasn't responded to the audit offer or the strategic tension, the partnership/integration framing may resonate differently."
+          }
+        ]
+      }
+    },
+    {
+      "input": "Write cold outreach emails to Christian Kleinerman, SVP of Product at Snowflake, about our data lineage product. Trigger: Snowflake recently announced Snowflake Horizon, their governance framework, and admitted in their earnings call that data lineage is the most requested feature from enterprise customers. Our product provides automated end-to-end data lineage from source to dashboard, supports column-level lineage, and integrates natively with Snowflake via partner connect. We already support dbt, Fivetran, and Looker in the Snowflake ecosystem.",
+      "output": {
+        "context": {
+          "account": "Snowflake",
+          "contact": "Christian Kleinerman",
+          "title": "SVP of Product",
+          "trigger": "Snowflake Horizon launch and earnings call admission that data lineage is top customer request",
+          "product": "Automated data lineage platform"
         },
-        "variant_c": {
-          "subject": "30-45 min/physician/day back — for meridian?",
-          "body": "Dr. Okonkwo,\n\nMost CMIOs I work with are trying to solve the same problem: documentation takes 40-50% of physician time, and EHRs haven't fixed it.\n\nWe've worked with 4 regional health systems to deploy AI-assisted documentation and recovered an average of 35 minutes per physician per day — without changing clinical workflows or requiring new hardware.\n\nGiven Meridian's 2026 focus on physician experience, would it be worth 20 minutes to see the data?\n\nAlex",
-          "word_count": 88,
-          "personalization_signal": "Industry benchmark + their stated 2026 priority",
-          "angle": "Peer comparison + quantified outcome + their priority"
-        },
-        "subject_analysis": {
-          "variant_a": "References their exact strategy doc language. High relevance signal. Risk: slightly long",
-          "variant_b": "Safe and professional. Works for a formal healthcare buying context. Lower urgency",
-          "variant_c": "Outcome-led with specific numbers. Strongest for a CMIO building a business case"
-        },
-        "recommended_sequence": "Healthcare buyers move slowly. Send Variant C first (outcome-focused). Day 5: Variant A (strategic alignment). Day 12: Variant B (softer, relationship-building tone). Day 21: Break-up email"
+        "variants": [
+          {
+            "variant": "A",
+            "subject": "The #1 Horizon feature request you can't build fast enough",
+            "body": "Christian,\n\nOn Snowflake's last earnings call, you mentioned data lineage is the most requested enterprise feature. I imagine the Horizon team is building lineage capabilities, but end-to-end lineage from source systems through dbt transformations to Looker dashboards is a 2-3 year build for any platform team.\n\nWe've already built it. Column-level lineage across the full Snowflake ecosystem: Fivetran ingestion, dbt transformations, and Looker/Tableau consumption — all automated, all real-time.\n\nCapital One's data platform team deployed us across 4,000+ Snowflake tables and had full lineage mapped in 48 hours. Their regulatory audit prep time dropped from 6 weeks to 3 days.\n\nWe're already on Partner Connect. Would it make sense to explore a deeper integration with Horizon?",
+            "word_count": 129,
+            "personalization_signal": "Direct reference to Snowflake earnings call comments and Horizon governance framework",
+            "why_this_variant": "Partnership-first approach. Positions our product as an accelerant for Snowflake's product roadmap rather than a competing feature. Appeals to the SVP of Product's desire to deliver customer-requested features faster."
+          },
+          {
+            "variant": "B",
+            "subject": "Column-level lineage for Horizon — already built",
+            "body": "Christian,\n\nBuilding data lineage into Horizon from scratch means solving three hard problems simultaneously: cross-tool lineage (not just within Snowflake), column-level granularity, and real-time updates as schemas evolve.\n\nWe've spent 4 years solving exactly these problems for Snowflake-centric data stacks. We already integrate with Partner Connect, and we natively support the tools your enterprise customers use most: dbt, Fivetran, Looker, Sigma, and Tableau.\n\nThree of Snowflake's top 20 customers by consumption (including two Fortune 100 financial institutions) already use us for lineage. They chose us specifically because Snowflake didn't have native lineage.\n\nRather than build it all, what if Horizon embedded best-in-class lineage through a deeper partnership? Happy to share our integration architecture.",
+            "word_count": 127,
+            "personalization_signal": "Snowflake's existing top customers already using the product and Partner Connect integration",
+            "why_this_variant": "Build-vs-partner approach. Directly addresses the product leader's build decision by showing that key customers already chose an external solution. Creates urgency around customer expectation management."
+          },
+          {
+            "variant": "C",
+            "subject": "Quick data point from 3 of your top 20 customers",
+            "body": "Christian,\n\nThree of Snowflake's top 20 enterprise customers use our data lineage platform today. They all told us the same thing: they need lineage across their full stack, not just within Snowflake.\n\nThat's the gap Horizon can't easily close alone. A dbt model that transforms Fivetran-ingested data and feeds a Looker dashboard touches four systems. Snowflake sees one piece of that chain.\n\nWe see all of it. Column-level, real-time, automated.\n\nI'd love to share what we're hearing from your enterprise customers about their lineage needs and explore whether a tighter Horizon integration serves them better than what we each offer separately.\n\n20 minutes?",
+            "word_count": 115,
+            "personalization_signal": "Existing usage among Snowflake's top customers creates insider credibility",
+            "why_this_variant": "Customer intelligence approach. Leads with the fact that we already have relationships with Snowflake's most valuable customers. Offers to share customer intelligence as a value exchange for the meeting."
+          }
+        ],
+        "subject_line_analysis": [
+          {
+            "variant": "A",
+            "why_it_works": "References a specific pain point Christian publicly acknowledged. The phrase 'can't build fast enough' validates the product team's challenge without being adversarial.",
+            "risk": "Could be perceived as presumptuous about Snowflake's internal roadmap capabilities."
+          },
+          {
+            "variant": "B",
+            "why_it_works": "Direct, specific, and action-oriented. Tells Christian exactly what we have and implies time savings. Product leaders appreciate efficiency in communication.",
+            "risk": "May feel too transactional for a strategic partnership conversation."
+          },
+          {
+            "variant": "C",
+            "why_it_works": "The mention of top 20 customers creates immediate attention. Any SVP of Product wants to know what their largest customers are doing and saying.",
+            "risk": "Christian might want to know which customers immediately, which we may not be able to disclose."
+          }
+        ],
+        "recommended_send_sequence": [
+          {
+            "day": 1,
+            "variant": "C",
+            "note": "Lead with customer intelligence. The top-20 customer data point is the strongest hook and creates the most curiosity. Product leaders are wired to respond to customer signals."
+          },
+          {
+            "day": 3,
+            "variant": "A",
+            "note": "Follow up with the earnings call reference and partnership framing. If the customer angle did not land, the product roadmap acceleration angle may resonate."
+          },
+          {
+            "day": 7,
+            "variant": "B",
+            "note": "Close with the direct, technical approach. By day 7, if curiosity and strategy did not work, a straightforward 'we already built what you need' message cuts through."
+          }
+        ]
       }
     }
   ]
