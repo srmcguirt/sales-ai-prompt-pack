@@ -2,11 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE) [![Prompts](https://img.shields.io/badge/Prompts-8-orange?style=flat-square)](./system-prompts/) [![GitHub stars](https://img.shields.io/github/stars/srmcguirt/sales-ai-prompt-pack?style=flat-square)](https://github.com/srmcguirt/sales-ai-prompt-pack)
 
-> **8 system prompts that turn any LLM into a senior sales professional.** Prospect research, cold emails, discovery prep, demo scripts, objection handling, proposals, win/loss analysis, and follow-up sequences — each with few-shot examples and structured output schemas for Claude, GPT-4, Cursor, and any OpenAI-compatible API.
+> **8 system prompts that turn any LLM into a senior sales professional.** Prospect research, cold emails, discovery prep, demo scripts, objection handling, proposals, win/loss analysis, and follow-up sequences — built for Claude, GPT-4, Cursor, and any OpenAI-compatible API.
 >
 > *Part of the [Shane McGuirt](https://srmcguirt.github.io) AI tooling collection.*
 
-> 💎 **Full pack** with all 8 prompts, few-shot examples, output schemas, and future updates → **[Get it on Gumroad ($49) →](https://srmcguirt.gumroad.com)**
+> 💎 **Full pack** with all 8 prompts, few-shot examples, output schemas, and future updates → **[Get it on Gumroad ($29) →](https://srmcguirt.gumroad.com/l/sales-prompt-pack)**
 >
 > 📬 **Free sample prompt** — [subscribe at srmcguirt.github.io](https://srmcguirt.github.io)
 
@@ -28,15 +28,15 @@
 ### What Makes These Different from Free Prompts
 
 - **800+ words each** — comprehensive system prompts with role definitions, behavioral constraints, output format specifications, and edge case handling.
-- **Real few-shot examples** — each prompt includes 3 realistic input/output pairs with actual research briefs, cold emails, discovery questions, and proposals.
-- **Structured output schemas** — JSON Schema files for every prompt, ready to use with OpenAI's structured output, Claude's tool use, or any JSON-mode API.
+- **Real few-shot examples** (full pack) — each prompt includes 3 realistic input/output pairs with actual research briefs, cold emails, discovery questions, and proposals.
+- **Structured output schemas** (full pack) — JSON Schema files for every prompt, ready to use with OpenAI's structured output, Claude's tool use, or any JSON-mode API.
 - **Edge case coverage** — each prompt handles the hard cases: enterprise vs. SMB, competitive bake-offs, executive buyers, inbound vs. outbound, no-budget responses.
 
 ---
 
 ## ⚡ The Prompt Architecture
 
-Every prompt follows our **4-Layer Prompt Architecture**:
+Every prompt follows a **4-Layer Prompt Architecture**:
 
 ```
 ┌─────────────────────────────────────────────┐
